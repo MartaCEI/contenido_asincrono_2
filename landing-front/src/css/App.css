@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.Section-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: center;
+  justify-items: center;
+  padding: 2em;
+}
+
+.Section-flex {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+  align-items: center;
+  justify-content: flex-start;
+}
