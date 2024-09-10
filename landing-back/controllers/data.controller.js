@@ -1,34 +1,38 @@
-import { landingData } from "../data/mockdata";
+import { landingData } from '../data/mockdata.js'
 
-const responseApi = {
+// Base API response template
+const baseResponseApi = {
     data: [],
     msg: "Data fetched successfully",
     status: "success"
-}
+};
 
-const { hero, sections, aplications, clients } = landingData;
+// Destructure data from landingData
+const { hero, sections, applications, clients } = landingData;
 
 // GET all data from the landing page
 export const getLandingData = (req, res) => {
     try {
-        // Consultamos la base de datos
-        const statusCode = landingData.length ? 200 : 204;
+        // Clone the base response object to avoid state persistence
+        const responseApi = { ...baseResponseApi };
 
+        // Determine status code: 200 if data exists, 204 if no content
+        const statusCode = landingData ? 200 : 204;
+
+        // Update the response message and data
         responseApi.msg = "Datos obtenidos con éxito";
-        // responseApi.count = landingData.length;
-        responseApi.data= landingData;
+        responseApi.data = landingData; // Return specific parts of landingData
 
+        // Send the response with the appropriate status code
         res.status(statusCode).json(responseApi);
     } catch (error) {
+        console.error("Error:", error);
 
-        //  Guarda en la base de datos 
-        console.log("error", error)
-
-        responseApi.status = "error"
-        responseApi.msg = "Tuvimos un error al obtener la BD"
-        res.status(500).json(responseApi)
+        // Handle any errors and respond with a 500 status code
+        const errorResponse = { ...baseResponseApi, status: "error", msg: "Tuvimos un error al obtener la BD" };
+        res.status(500).json(errorResponse);
     }
-}
+};
 
 // export const getHero = (req, res) => {
 //     try {

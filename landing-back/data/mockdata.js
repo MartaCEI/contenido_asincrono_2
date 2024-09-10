@@ -1,10 +1,10 @@
-export const landingData = [{
+export const landingData = {
     hero: {
-        img:"hero.png",
+        img:"hero.png.png",
         icono: "hero.svg",
         color: "#007aff",
         btnCallAction: {
-            img: "download.svg",
+            img: "download.svg.png",
             url: "appstore.com",
             },
         titulo: "Triage is first aid for your inbox.",
@@ -99,4 +99,4 @@ export const landingData = [{
             logo: "macstories.png"
         },
     ]
-}]
+}

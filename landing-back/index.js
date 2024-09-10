@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import indexRoutes from './routes/index.routes.js'
-import { PORT, DOMAIN } from './config/config.js'
+import { PORT, DOMAIN, URL } from './config/config.js'
 
 const app = express();
 
@@ -13,14 +13,16 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use("/API/v1/", indexRoutes);
-
 app.use(express.static('public'));
+
+app.use("/API/v1/", indexRoutes);
 
 // ----------------------------------
 // Server
 // ----------------------------------
 
+// app.get("/")
+
 app.listen(PORT, () => {
-    console.log(`Server running on ${DOMAIN}:${PORT}`);
+    console.log(`Server running on ${URL}`);
 });

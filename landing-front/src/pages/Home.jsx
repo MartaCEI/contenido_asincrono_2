@@ -5,9 +5,12 @@ import Client from "../components/Client";
 import Aplication from "../components/Aplication";
 const URL = import.meta.env.VITE_API_URL;
 
-
+// Crear valor inicial (formularios) o imprimirlo si no existe (si muestra el valor en pantalla).
 const Home = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({
+        clients:[],
+        aplications:[]
+    });
 
     useEffect(() => {
         fetchAllData();
@@ -17,13 +20,14 @@ const Home = () => {
         try {
             const response = await fetch(`${URL}/home`);
             const objeto = await response.json();
-            setData(objeto.landingData);
+            // setData(objeto);
             console.log(objeto);
 
             if (objeto.status == "error") {
                 setUserError(`Tuvimos un error: ${objeto.msg}`)
                 return;
-            } setData(objeto.data);
+            } 
+            setData(objeto.data);
 
         } catch (error) {
             console.log("Error al hacer el fetch de los posts:", error);
@@ -34,22 +38,25 @@ const Home = () => {
 
     return (
         <div>
-                <Hero {...hero} />
-                {
-                sections.map((section) => {
-                    return <Section key={section.id} {...section} />
-                })
-                }
-                {
-                clients.map((client) => {
-                    return <Client key={client.id} {...client} />
-                })
-                }
-                {
-                aplications.map((aplication) => {
-                    return <Aplication key={aplication.id} {...aplication} />
-                })
-                }
+            {
+            hero && 
+            <Hero {...hero} />
+            }
+            { sections &&
+            sections.map((section) => {
+                return <Section key={section.id} {...section} />
+            })
+            }
+            {
+            clients.map((client) => {
+                return <Client key={client.id} {...client} />
+            })
+            }
+            {
+            aplications.map((aplication) => {
+                return <Aplication key={aplication.id} {...aplication} />
+            })
+            }
         </div>
     );
 }
