@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 80rem;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 32px; */
   text-align: center;
 }
 
@@ -41,7 +41,7 @@
   color: #888;
 }
 
-.Section-hero {
+/* .Section-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
@@ -56,4 +56,91 @@
   gap: 2em;
   align-items: center;
   justify-content: flex-start;
+} */
+
+.Header {
+  padding: 1em;
+  background-color: #007aff;
+  color: white;
+  display: flex;
+  gap: 32px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Header-a {
+  color: white;
+  text-decoration: none;
+}
+
+.Section {
+  padding: 4rem 0 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Left {
+  flex-flow: row-reverse nowrap;
+}
+
+.Section-right {
+  margin: 0 4rem;
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  /* gap: 1rem; */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.Section-hero-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.Section-h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.Section-p {
+  font-size: 1rem;
+  color: white;
+}
+
+.Section-img-app {
+  width: 8rem;
+}
+
+.Section-left {
+  margin: 0 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Section-img {
+  width: 20rem
+}
+
+
+/* Ajustes responsivos */
+@media (max-width: 48rem) {
+  .Section-hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.25rem;
+  }
+
+  .Section-flex {
+      max-width: 100%;
+  }
+
+  .hero-image {
+      width: 15.625rem;
+      margin-top: 1.25rem;
+  }
 }

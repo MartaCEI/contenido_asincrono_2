@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const URL = import.meta.env.VITE_API_URL;
+import Correo from "../components/Correo";
 
 const ListaCorreos = () => {
     const [listaCorreo, setListaCorreo ] = useState([]);
@@ -11,8 +12,8 @@ const ListaCorreos = () => {
     const fetchCorreos = async () => {
         try {
             const respuesta = await fetch(`${URL}/correos`)
-            const objeto = await objeto.json();
-            console.log(objeto);
+            const objeto = await respuesta.json();
+            console.log(objeto.data);
 
             if (objeto.status == "error") {
                 setUserError(`Tuvimos un error: ${objeto.msg}`)
@@ -25,14 +26,12 @@ const ListaCorreos = () => {
         }
     }
 
-    const {asunto, contenido} = correo;
-
     return (
         <>
             {
-            listaCorreo.map((correo) => 
-            {
-            return <Correo key={correo.id} {...correo} />}
+            listaCorreo.map((correo) => {
+                return <Correo key={correo.id} {...correo} />
+            })
             }
         </>
     );

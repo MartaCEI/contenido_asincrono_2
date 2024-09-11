@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 
-
 const Header = () => {
     return (
-        <>
-            <Link to="/correos" >Correos</Link>
-            <Link to="/nuevo" >Nuevo</Link>
-        </>
+        <header className="Header">
+            <Link className="Header-a" to="/" >Home</Link>
+            <Link className="Header-a" to="/correos" >Correos</Link>
+            <Link className="Header-a" to="/nuevo" >Nuevo</Link>
+        </header>
     );
 }
 

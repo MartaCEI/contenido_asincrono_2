@@ -1,11 +1,11 @@
 export const landingData = {
     hero: {
-        img:"hero.png.png",
-        icono: "hero.svg",
+        img:"hero.png",
+        icono: "plus.png",
         color: "#007aff",
         btnCallAction: {
-            img: "download.svg.png",
-            url: "appstore.com",
+            img: "download.png",
+            url: "https://www.apple.com/es/app-store/",
             },
         titulo: "Triage is first aid for your inbox.",
         contenido: "Everything you loved about the original Triage is back – only better. Download Triage 2 on the App Store today."
