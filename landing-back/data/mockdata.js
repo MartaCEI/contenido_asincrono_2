@@ -50,26 +50,32 @@ export const landingData = {
         {
             icono: "applications_mail.png",
             titulo: "Works with Gmail,iCloud & IMAP",
+            color: "#007aff"
         },
         {
             icono: "applications_chip.png",
-            titulo: "All processing happens on device"
+            titulo: "All processing happens on device",
+            color: "#ffb800"
         },
         {
             icono: "applications_shield.png",
-            titulo: "Your data is yours to stay"
+            titulo: "Your data is yours to stay",
+            color: "#ff2d55"
         },
         {
             icono: "applications_moon.png",
-            titulo: "Supports dark mode"
+            titulo: "Supports dark mode",
+            color: "#000000"
         },
         {
             icono: "applications_hand.png",
-            titulo: "Free to use. Or pay for more features."
+            titulo: "Free to use. Or pay for more features.",
+            color: "#7001ff"
         },
         {
             icono: "applications_hammer.png",
-            titulo: "Built & maintained by indie developers"
+            titulo: "Built & maintained by indie developers",
+            color: "#ffffff"
         },
     ],
 
@@ -80,11 +86,11 @@ export const landingData = {
         },
         {
             content:"If you're constantly battling to keep your email account at inbox zero, Triage for iOS could be worth a look.",
-            logo: "the-verge.svg"
+            logo: "the-verge.png"
         },
         {
             content:"Triage makes it feel seamless, and even fun, to achieve — if not Inbox Zero — at least Inbox Zen.",
-            logo: "macworld.svg"
+            logo: "macworld.png"
         },
         {
             content:"Triage provides the first aid necessary to get your inbox back in fighting shape.",

@@ -10,4 +10,6 @@ BACK:
 init -y
 npm i nodemon -D
 npm i express cors dotenv
-npm i -- save mysql2
+npm i --save mysql2
+
+http://localhost/phpmyadmin/

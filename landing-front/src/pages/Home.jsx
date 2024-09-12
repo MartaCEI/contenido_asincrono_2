@@ -47,16 +47,20 @@ const Home = () => {
                 return <Section key={section.id} {...section} />
             })
             }
+            <article className="Aplicaiones">
+                {
+                aplications.map((aplication) => {
+                    return <Aplication key={aplication.id} {...aplication} />
+                })
+                }
+            </article>
+            <article className="Clients">
             {
             clients.map((client) => {
                 return <Client key={client.id} {...client} />
             })
             }
-            {
-            aplications.map((aplication) => {
-                return <Aplication key={aplication.id} {...aplication} />
-            })
-            }
+            </article>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import {Select} from '../components/Select';
 import {Input} from '../components/Input';
 import { useState } from 'react';
+const URL = import.meta.env.VITE_API_URL;
 
 const RedactarCoreo = () => {
     const [formData, setFormData] = useState({

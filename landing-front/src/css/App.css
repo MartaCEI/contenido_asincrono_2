@@ -41,23 +41,7 @@
   color: #888;
 }
 
-/* .Section-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
-  align-items: center;
-  justify-items: center;
-  padding: 2em;
-}
-
-.Section-flex {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2em;
-  align-items: center;
-  justify-content: flex-start;
-} */
-
+/* ********************** CSS del header ********************* */
 .Header {
   padding: 1em;
   background-color: #007aff;
@@ -73,10 +57,13 @@
   text-decoration: none;
 }
 
+/* ********************** CSS de las secciones ********************* */
+
 .Section {
   padding: 4rem 0 0 0;
   display: flex;
   flex-flow: row nowrap;
+  margin: 0 auto;
 }
 
 .Left {
@@ -84,13 +71,13 @@
 }
 
 .Section-right {
-  margin: 0 4rem;
+  max-width: 20rem;
   text-align: left;
   display: flex;
   flex-flow: column nowrap;
-  /* gap: 1rem; */
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .Section-hero-icon {
@@ -114,17 +101,92 @@
 }
 
 .Section-left {
-  margin: 0 4rem;
+  max-width: 20rem;
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
   justify-content: flex-end;
   align-items: center;
+  margin: 0 auto;
+}
+
+.Section:nth-of-type(2) {
+  padding: 0 0 4rem 0;
+}
+
+.Section:nth-of-type(3) {
+  padding: 0 0 4rem 0;
 }
 
 .Section-img {
-  width: 20rem
+  width: 90%;
 }
+
+/* ********************** CSS de las aplicaciones ********************* */
+
+.Aplicaiones {
+  background-color: #cbcbcb;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.Aplicaiones-div {
+  max-width: 10rem;
+  padding: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.Aplicaiones-img {
+  width: 2rem;
+}
+
+.Aplicaiones-h3 {
+  color: white;
+  font-size: 0.8em;
+}
+
+.Aplicaiones-h3:nth-of-type(6) {
+  color: black;
+}
+
+/* ********************** CSS de las clientes ********************* */
+
+.Clients {
+  background-color: #cbcbcb;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.Client-div {
+  max-width: 10rem;
+  padding: 0.6rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.Client-img {
+  width: 2rem;
+}
+
+.Client-h3 {
+  color: black;
+  font-size: 0.8em;
+}
+
+
 
 
 /* Ajustes responsivos */
