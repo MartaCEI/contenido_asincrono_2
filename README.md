@@ -13,3 +13,5 @@ El número en la última columna es el ID del proceso (PID). Usa el Administrado
 2. Detén la aplicación en conflicto o cambia su puerto.
 
 ![alt text](image.png)
+
+PID 6412

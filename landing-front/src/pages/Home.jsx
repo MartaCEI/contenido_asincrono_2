@@ -48,18 +48,22 @@ const Home = () => {
             })
             }
             <article className="Aplicaiones">
-                {
-                aplications.map((aplication) => {
-                    return <Aplication key={aplication.id} {...aplication} />
-                })
-                }
+                <div className="Aplicaciones-container">
+                    {
+                    aplications.map((aplication) => {
+                        return <Aplication key={aplication.id} {...aplication} />
+                    })
+                    }
+                </div>
             </article>
             <article className="Clients">
-            {
-            clients.map((client) => {
-                return <Client key={client.id} {...client} />
-            })
-            }
+                <div className="Clients-container">
+                    {
+                    clients.map((client) => {
+                        return <Client key={client.id} {...client} />
+                    })
+                    }
+                </div>
             </article>
         </div>
     );

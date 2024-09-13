@@ -1,45 +1,10 @@
 #root {
-  max-width: 80rem;
+  /* max-width: 80rem; */
   margin: 0 auto;
   /* padding: 32px; */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
 
 /* ********************** CSS del header ********************* */
 .Header {
@@ -60,10 +25,17 @@
 /* ********************** CSS de las secciones ********************* */
 
 .Section {
-  padding: 4rem 0 0 0;
+  width: 100%;
+  max-height: 44rem;
+}
+
+.Section-container {
+  padding: 4rem 4rem 0 4rem;
+  max-width: 60rem;
   display: flex;
   flex-flow: row nowrap;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .Left {
@@ -71,13 +43,11 @@
 }
 
 .Section-right {
-  max-width: 20rem;
   text-align: left;
+  max-width: 22rem;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
-  margin: 0 auto;
 }
 
 .Section-hero-icon {
@@ -92,55 +62,60 @@
 }
 
 .Section-p {
-  font-size: 1rem;
-  color: white;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.714);
 }
 
 .Section-img-app {
   width: 8rem;
+  margin: 2rem 0;
 }
 
 .Section-left {
   max-width: 20rem;
   display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
   justify-content: flex-end;
-  align-items: center;
-  margin: 0 auto;
 }
 
-.Section:nth-of-type(2) {
+.Section:nth-of-type(2) .Section-container {
   padding: 0 0 4rem 0;
 }
 
-.Section:nth-of-type(3) {
+.Section:nth-of-type(3) .Section-container {
   padding: 0 0 4rem 0;
 }
 
 .Section-img {
-  width: 90%;
+  width: 20rem;
 }
 
 /* ********************** CSS de las aplicaciones ********************* */
 
+
 .Aplicaiones {
+  width: 100%;
+  max-height: 44rem;
   background-color: #cbcbcb;
+}
+
+.Aplicaciones-container {
   margin: 0 auto;
+  max-width: 60rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 3rem;
   gap: 3rem;
+  justify-items: center
 }
 
 .Aplicaiones-div {
-  max-width: 10rem;
-  padding: 0.6rem;
+  width: 13rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .Aplicaiones-img {
@@ -149,36 +124,44 @@
 
 .Aplicaiones-h3 {
   color: white;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
-.Aplicaiones-h3:nth-of-type(6) {
+.Aplicaiones-div:nth-of-type(6) .Aplicaiones-h3 {
   color: black;
 }
 
 /* ********************** CSS de las clientes ********************* */
 
 .Clients {
-  background-color: #cbcbcb;
+  width: 100%;
+  max-height: 44rem;
+  background-color: white;
+}
+
+.Clients-container {
   margin: 0 auto;
+  max-width: 60rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 3rem;
   gap: 3rem;
+  justify-items: center
 }
 
 .Client-div {
-  max-width: 10rem;
-  padding: 0.6rem;
+  max-width: 13rem;
+  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
-  border-radius: 10px;
+  border-radius: 1rem;
+  background-color: #cbcbcb;
 }
 
 .Client-img {
-  width: 2rem;
+  width: 6rem;
 }
 
 .Client-h3 {
@@ -186,10 +169,35 @@
   font-size: 0.8em;
 }
 
+/* ********************** CSS del footer ********************* */
 
+.Footer {
+  width: 100%;
+}
 
+.Footer-container {
+  margin: 0 auto;
+  max-width: 60rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.Footer-ul {  
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+}
+.Footer-li {
+  list-style: none;
+}
 
-/* Ajustes responsivos */
+.Footer-a {}
+
+.Footer-img {}
+
+/* Ajustes responsivos
 @media (max-width: 48rem) {
   .Section-hero {
       flex-direction: column;
@@ -205,4 +213,4 @@
       width: 15.625rem;
       margin-top: 1.25rem;
   }
-}
+} */
