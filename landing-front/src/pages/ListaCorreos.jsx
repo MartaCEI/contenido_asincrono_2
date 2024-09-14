@@ -26,6 +26,31 @@ const ListaCorreos = () => {
         }
     }
 
+    // const { id } = useParams();
+
+    // const fetchDeleteCorreo = async () => {
+    //     try {
+    //         const respuesta = await fetch(`${URL}/correos/${id}`, {
+    //             method: "DELETE",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify({id_correo: id})
+    //         })
+    //         const objeto = await respuesta.json();
+    //         console.log(objeto);
+
+    //         if (objeto.status == "error") {
+    //             setUserError(`Tuvimos un error: ${objeto.msg}`)
+    //             return;
+    //         } 
+    //         fetchCorreos();
+
+    //     } catch (error) {
+    //         console.log("Error al hacer el fetch de los posts:", error);
+    //     }
+    // }
+
     return (
         <>
             {

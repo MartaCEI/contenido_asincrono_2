@@ -1,7 +1,7 @@
 // importo la conexion a mysqlConfig
 import mysqldb from "../data/mysqldb.js"
 
-// endpoint 
+// Metodo GET para obtener todos los correos
 export const getAllCorreos = async (req, res) => {
 
     // Obtener la lista de correos y devolver al usuario su correo
@@ -16,6 +16,30 @@ export const getAllCorreos = async (req, res) => {
     })
 }
 
+// Metodo GET para obtener todos los correos con los usuarios
+export const getAllCorreosWithUsers = async (req, res) => {
+
+    // Obtener la lista de correos y devolver al usuario su correo
+    const query = `SELECT correos.*, 
+            remitente.nombre AS remitente_nombre, 
+            remitente.email AS remitente_email, 
+            remitente.image AS remitente_image,
+            destinatario.nombre AS destinatario_nombre, 
+            destinatario.email AS destinatario_email
+        FROM correos 
+        JOIN usuarios AS remitente ON remitente.id = correos.remitente_id
+        JOIN usuarios AS destinatario ON destinatario.id = correos.destinatario_id`;
+    const [result] = await mysqldb.query(query);
+
+    res.status(200).json({
+        msg: "Lista de correos",
+        success:"ok",
+        query: query,
+        data: result
+    })
+}
+
+// Metodo POST para crear un correo
 export const createCorreo = async (req, res) => {
     const {remitente_id, destinatario_id, asunto, contenido} = req.body;
     console.log(req.body)
@@ -37,6 +61,7 @@ export const createCorreo = async (req, res) => {
     });
 }
 
+// Metodo DELETE para borrar un correo
 export const deleteCorreo = async (req, res) => {
     const {id_correo} = req.body;
     console.log(req.body)
@@ -53,6 +78,7 @@ export const deleteCorreo = async (req, res) => {
     });
 }
 
+// Metodo GET para obtener un solo correo
 export const getSingleCorreo = async (req, res) => {
     const {id} = req.params;
     const query = `SELECT * FROM correos WHERE id = ?`;

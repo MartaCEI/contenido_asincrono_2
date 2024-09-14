@@ -15,3 +15,18 @@ El número en la última columna es el ID del proceso (PID). Usa el Administrado
 ![alt text](image.png)
 
 PID 6412
+
+
+```sql	
+SELECT correos.*,
+    remitente.nombre AS remitente_nombre, 
+    remitente.email AS remitente_email, 
+    remitente.image AS remitente_image, 
+    destinatario.nombre AS destinatario_nombre, 
+    destinatario.email AS destinatario_email 
+    FROM correos 
+    JOIN usuarios AS remitente ON remitente.id = correos.remitente_id
+    JOIN usuarios AS destinatario ON destinatario.id = correos.destinatario_id
+```
+
+![alt text](image-2.png)
