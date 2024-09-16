@@ -30,3 +30,8 @@ SELECT correos.*,
 ```
 
 ![alt text](image-2.png)
+
+
+cloud untropic
+
+llama gpt

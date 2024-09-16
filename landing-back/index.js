@@ -6,7 +6,7 @@ import { PORT, DOMAIN, URL } from './config/config.js'
 const app = express();
 
 // ----------------------------------
-// Midlewares
+// Midlewares: Funciones que se ejecutan segun el orden que queremos 
 // ----------------------------------
 
 app.use(cors());
@@ -17,11 +17,23 @@ app.use(express.static('public'));
 
 app.use("/API/v1/", indexRoutes);
 
+app.use((err, req, res, next) => {
+    res.status(500).json({
+        message: "No estoy funcionando",
+        data: null,
+        success:"ok",
+        query: query,
+        cant: 0
+    })
+})
+
 // ----------------------------------
 // Server
 // ----------------------------------
 
 // app.get("/")
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on ${URL}`);

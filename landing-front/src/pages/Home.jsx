@@ -20,7 +20,6 @@ const Home = () => {
         try {
             const response = await fetch(`${URL}/home`);
             const objeto = await response.json();
-            // setData(objeto);
             console.log(objeto);
 
             if (objeto.status == "error") {
@@ -30,7 +29,7 @@ const Home = () => {
             setData(objeto.data);
 
         } catch (error) {
-            console.log("Error al hacer el fetch de los posts:", error);
+            console.log("Error al hacer el fetch de los corrreos:", error);
         }
     }
 
