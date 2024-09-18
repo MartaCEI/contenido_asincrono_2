@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+
 export const PORT = process.env.PORT || 5000;
 export const DOMAIN = process.env.DOMAIN || 'http://localhost';
 
@@ -15,4 +16,5 @@ export const mysqlConfig = {
     database: process.env.DB_NAME || "db_tubasededatos"
 }
 
-
+// Config de mongoDB
+export const mongodbUri = process.env.MONGO_URI;

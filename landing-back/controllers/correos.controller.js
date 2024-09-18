@@ -1,5 +1,5 @@
 // importo la conexion a mysqlConfig
-import mysqldb from "../data/mysqldb.js"
+// import mysqldb from "../data/mysqldb.js"
 
 const apiResponse = {
     message: "El controller funciona",

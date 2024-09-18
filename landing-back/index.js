@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import indexRoutes from './routes/index.routes.js'
+import mongoRoutes from './routes/mongodb.routes.js'
 import { PORT, DOMAIN, URL } from './config/config.js'
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.use("/API/v1/", indexRoutes);
+app.use("/API/v1/mongo", mongoRoutes);
 
 app.use((err, req, res, next) => {
     res.status(500).json({
@@ -32,9 +34,6 @@ app.use((err, req, res, next) => {
 // ----------------------------------
 
 // app.get("/")
-
-
-
 app.listen(PORT, () => {
     console.log(`Server running on ${URL}`);
 });
