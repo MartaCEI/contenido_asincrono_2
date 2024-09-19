@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { now } from 'mongoose'
 import {mongodbUri} from '../config/config.js'
 
 // crear una conexion
@@ -34,11 +34,21 @@ const emailSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    created_at: {
+    deleted_at: {
         type: Date,
         default: Date.now
     }
+}, 
+{ // OPCIONES
+    timestamps: true,
+    strict: false,
+    versionKey: false
 })
+
+// Opciones de mongoose schema
+// timestamps=true,           Crea updated_at y created_at automaticamente y queremos hacer el soft delete, tendermos que crear nosotros el deleted_at
+// strict=false, (opcional)   Esto me permite utilizar campos adicionales (no sea estricto con el modelo)
+// versionKey: false          Desactiva el versionado de Mongoose __v: 0
 
 
 // SubSchema o NestedSchema
@@ -66,11 +76,14 @@ const userSchema = new mongoose.Schema({
 })
 
 
-
+// TABLAS = COLECCIONES
 // crear nuertros modelos
 const User = mongoose.model('User', userSchema);
 const Email = mongoose.model('Email', emailSchema);
+
 // Se creara automaticamente las colecciones que no existen, pero en minusculas y en plural.
+// User -> Users
+// Email -> Emails
 
 // Exportar los modelos y la conexión.
 export { connectDB, User, Email }
