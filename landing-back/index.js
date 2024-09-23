@@ -25,13 +25,11 @@ app.use("/API/v1/", indexRoutes);
 // Rutas con mongo (no se pone mongo, pero lo hemos puesto para diferenciar entre mysql y mongo)
 app.use("/API/v1/mongo", mongoRoutes);
 
-
 app.use((err, req, res, next) => {
     res.status(500).json({
         message: "No estoy funcionando",
         data: null,
         success:"ok",
-        query: query,
         cant: 0
     })
 })
