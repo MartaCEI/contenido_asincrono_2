@@ -82,8 +82,8 @@ const User = mongoose.model('User', userSchema);
 const Email = mongoose.model('Email', emailSchema);
 
 // Se creara automaticamente las colecciones que no existen, pero en minusculas y en plural.
-// User -> Users
-// Email -> Emails
+// User -> users
+// Email -> emails
 
 // Exportar los modelos y la conexión.
 export { connectDB, User, Email }
