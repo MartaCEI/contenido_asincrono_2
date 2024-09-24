@@ -1,10 +1,14 @@
 import {Router} from "express"
+import {getLandingData} from '../controllers/data.controller.js'
 // Controlers típicos de un CRUD
 import {getEmails, getEmailById, createEmail, deleteEmail, updateEmail} from '../controllers/correos.mongo.controller.js'
 // Controllers específicos
 import {getEmailsByUserId, getEmailsByAsunto} from '../controllers/correos.mongo.controller.js'
 
 const router = Router();
+
+// Rutas al mock
+router.get("/home", getLandingData);
 
 // /API/v1/mongo
 router.get('/correos' , getEmails)

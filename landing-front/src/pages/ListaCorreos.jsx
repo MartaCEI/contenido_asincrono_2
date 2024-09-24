@@ -13,13 +13,13 @@ const ListaCorreos = () => {
         try {
             const respuesta = await fetch(`${URL}/correos`)
             const objeto = await respuesta.json();
-            console.log(objeto.data);
+            console.log(objeto);
 
             if (objeto.status == "error") {
                 setUserError(`Tuvimos un error: ${objeto.msg}`)
                 return;
             } 
-            setListaCorreo(objeto.data);
+            setListaCorreo(objeto);
 
         } catch (error) {
             console.log("Error al hacer el fetch de los correos :", error);

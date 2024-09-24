@@ -20,7 +20,7 @@ const Home = () => {
         try {
             const response = await fetch(`${URL}/home`);
             const objeto = await response.json();
-            console.log(objeto);
+            console.log(objeto.data);
 
             if (objeto.status == "error") {
                 setUserError(`Tuvimos un error: ${objeto.msg}`)
